@@ -7,22 +7,24 @@ public class BlackjackApplication {
 	public static void main(String[] args) {
 		BlackjackApplication app = new BlackjackApplication();
 		app.run();
-			
+
 	}
+
 	public void run() {
 		Scanner scanner = new Scanner(System.in);
-
-		System.out.println("Welcome to a garage full of table games.");
-
-		venueMenu(scanner);
+		gameMenu(scanner);
 	}
 
-	public void venueMenu(Scanner scanner) {
-		System.out.println();
-		System.out.println("Please choose from the options below.");
-		System.out.println("1. Play BackJack.");
-		System.out.println("2. Quit.");
-		System.out.println("Enter choice here (1-2):");
+	public void gameMenu(Scanner scanner) {
+		System.out.println("***********************************************************");
+		System.out.println("Welcome to Blackjack game night $$$$$");
+		System.out.println("Please read following rules carefully!");
+		System.out.println("\t* Aces will have a value of 11.");
+		System.out.println("\t* Jacks, Queens, and Kings are each worth 10 points.");
+		System.out.println("\t* All other cards are face value.");
+		System.out.println("Press [1] to Play BackJack.");
+		System.out.println("Press [2] to exit.");
+		System.out.println("***********************************************************");
 		int selection = 0;
 
 		try {
@@ -32,15 +34,15 @@ public class BlackjackApplication {
 
 		switch (selection) {
 		case 1:
-			Table table = new Table();
-			table.startBlackJack(scanner);
+			Game game = new Game();
+			game.startBlackJack(scanner);
 			break;
 		case 2:
-			System.out.println("Thanks, and have a great one!");
+			System.out.println("Goodbye. At least one of us had fun!");
 			System.exit(0);
 			break;
 		default:
-			System.err.println("Error: Unexpected value entered.");
+			System.err.println("Invalid option. Please, try again!");
 			run();
 		}
 	}

@@ -1,11 +1,11 @@
 #Blackjack
-
+	
 ##Overview
-
+	
 This project aims to build a functional command line blackjack game. 
 
-##Structure
-
+##Unified Modeling Language
+	
 ![UML](UML.png)
 
 ## User Story
